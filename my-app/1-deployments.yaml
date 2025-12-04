@@ -5,7 +5,7 @@ metadata:
   name: nginx
   namespace: prod
   labels:
-    app:  nginx
+    app: nginx
 spec:
   replicas: 1
   selector:
@@ -14,10 +14,10 @@ spec:
   template:
     metadata:
       labels:
-        app: myapp
+        app: nginx   # ✅ Fixed to match selector
     spec:
       containers:
         - name: nginx
           image: mprasha/nginx:v0.1.0
           ports:
-          - containerPort: 80
+            - containerPort: 80
